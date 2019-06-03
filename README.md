@@ -1,7 +1,13 @@
-# Les appareils
+## Les appareils
 copié de https://openclassrooms.com/fr/courses/4668271-developpez-des-applications-web-avec-angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+
+## in Root directory les-appareils/ run :
+
+   npm install
+
+This will install the directory node-modules/
 
 ## Development server
 
