@@ -1,4 +1,10 @@
 import { Subject } from 'rxjs/Subject';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Db } from '../models/Db.model';
+
+@Injectable()
 
 export class AppareilService {
 
@@ -19,6 +25,8 @@ export class AppareilService {
 	    status: 'éteint'
 	}
     ];
+
+    constructor(private httpClient: HttpClient) { };
 
     appareilSubject = new Subject<any[]>();
     
@@ -72,5 +80,33 @@ export class AppareilService {
 	    }
 	);
 	return appareil;
+    }
+
+    saveAppareilsToServer() {
+	this.httpClient
+	    .put('https://les-appareils.firebaseio.com/appareils.json', this.appareils)
+	//    .put(db_url, this.appareils)
+	    .subscribe(
+		() => {
+		    console.log('Enregistrement terminé !');
+		},
+		(error) => {
+		    console.log('saveAppareilsToServer Erreur : ' + error);
+		}
+	    );
+    }
+
+    getAppareilsFromServer() {
+	this.httpClient
+	    .get<any[]>('https://les-appareils.firebaseio.com/appareils.json')
+		.subscribe(
+		    (response) => {
+			this.appareils = response;
+			this.emitAppareilSubject();
+		    },
+		    (error) => {
+			console.log('Erreur ! : ' + error);
+		    }
+		);
     }
 }

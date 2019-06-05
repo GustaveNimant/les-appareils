@@ -51,6 +51,14 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
 	}
     }
 
+    onEnregistrer() {
+	this.appareilService.saveAppareilsToServer();
+    }
+
+    onRecuperer() {
+	this.appareilService.getAppareilsFromServer();
+    }
+
     ngOnDestroy() {
 	this.appareilSubscription.unsubscribe();
     }
