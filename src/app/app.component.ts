@@ -15,13 +15,13 @@ export class AppComponent implements OnInit, OnDestroy {
     secondes: number;
     counterSubscription: Subscription;
 
-    birthday = new Date(1988, 3, 15);
-    toggle = true;
-    
-    get format()   { return this.toggle ? 'shortDate' : 'fullDate'; }
+    birthday = new Date(1988, 3, 15); /* test */
+    toggle = true; /* test */
 
-    toggleFormat() { this.toggle = !this.toggle; }
-    
+    get format() { return this.toggle ? 'shortDate' : 'fullDate'; } /* test */
+
+    toggleFormat() { this.toggle = !this.toggle; } /* test */
+
     ngOnInit() {
 	const counter = Observable.interval(1000);
 	this.counterSubscription = counter.subscribe(
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		console.log('Uh-oh, an error occurred! : ', error);
 	    },
 	    () => {
-		console.log('Observable complete!');
+		console.log('Observable terminée !');
 	    }
 	);
     }

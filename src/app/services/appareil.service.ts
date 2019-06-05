@@ -2,8 +2,6 @@ import { Subject } from 'rxjs/Subject';
 
 export class AppareilService {
 
-    appareilSubject = new Subject<any[]>();
-
     private appareils = [
 	{
 	    id: 1,
@@ -22,6 +20,8 @@ export class AppareilService {
 	}
     ];
 
+    appareilSubject = new Subject<any[]>();
+    
     emitAppareilSubject() {
 	this.appareilSubject.next(this.appareils.slice());
     }
@@ -56,9 +56,11 @@ export class AppareilService {
 	    name: '',
 	    status: ''
 	};
+
 	appareilObject.name = name;
 	appareilObject.status = status;
 	appareilObject.id = this.appareils[(this.appareils.length - 1)].id + 1;
+	
 	this.appareils.push(appareilObject);
 	this.emitAppareilSubject();
     }

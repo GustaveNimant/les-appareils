@@ -22,12 +22,18 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
 	);
     });
 
-    constructor(private appareilService: AppareilService) { }
+    constructor(private appareilService: AppareilService) { } /* injection */
 
     ngOnInit() {
 	this.appareilSubscription = this.appareilService.appareilSubject.subscribe(
-	    (appareils: any[]) => {
-		this.appareils = appareils;
+	    (app_: any[]) => {
+		this.appareils = app_;
+	    },
+	    (error:any) => {
+		console.log('Oh-oh il y a une erreur! : ', error);
+	    },
+	    () => {
+		console.log('Les appareils ont été affichés!');
 	    }
 	);
 	this.appareilService.emitAppareilSubject();
