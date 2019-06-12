@@ -3,8 +3,6 @@
                'list-group-item-danger': appareilStatus === 'éteint'}">
 
     <h4 [ngStyle]="{color: getColor()}">
-	
-	
 	Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
     <a [routerLink]="[id]">Détail</a>
     <input type="text" class="form-control" [(ngModel)]="appareilName">
@@ -16,7 +14,6 @@
     </div>
     
     <div *ngIf="appareilStatus === 'allumé'">
-	
 	<button class="btn btn-danger"
 		(click)="onEteindre()"
 	>Eteindre</button>	

@@ -1,8 +1,9 @@
 <p>{{ title }}</p>
 
-<p>date is {{ birthday | date:format }}</p>
-<button (click)="toggleFormat()">Toggle Format</button>
+<p>date is {{ today | date:format }}</p>
+<button (click)="toggleFormat()">Toggle Date Format</button>
 
+<p>navigation :</p>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
 	<div class="navbar-collapse">
@@ -18,7 +19,7 @@
 	</div>
     </div>
 </nav>
-
+<p>router-outlet :</p>
 <div class="container">
     <div class="row">
 	<div class="col-xs-12">

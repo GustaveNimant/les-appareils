@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs/Subscription';
 })
 
 export class AppComponent implements OnInit, OnDestroy {
-    title = 'Un titre';
+    title = 'Page de test';
     secondes: number;
     counterSubscription: Subscription;
 
-    birthday = new Date(1988, 3, 15); /* test */
+    today = new Date(); /* test */
     toggle = true; /* test */
 
     get format() { return this.toggle ? 'shortDate' : 'fullDate'; } /* test */
