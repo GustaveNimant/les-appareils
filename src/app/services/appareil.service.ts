@@ -84,8 +84,9 @@ export class AppareilService {
 	this.httpClient
 	    .get<any[]>('https://les-appareils.firebaseio.com/appareils.json')
 		.subscribe(
-		    (response) => {
-			this.appareils = response;
+		    (the_response) => {
+			this.appareils = the_response;
+			console.log('getAppareilsFromServer : the response is', the_response);
 			this.emitAppareilSubject();
 		    },
 		    (error) => {

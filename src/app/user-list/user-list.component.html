@@ -8,6 +8,12 @@
 	    Cette personne a des hobbies :
 	    <span *ngFor="let a_hobby of a_user.hobbies">{{ a_hobby }} - </span>
 	</p>
+	
+	<button class="btn btn-default pull-right"
+		(click)="onDeleteUser(a_user)">
+	    <span class="glyphicon glyphicon-minus"></span>
+	</button>
+
     </li>
     <a routerLink="/new-user">Nouvel utilisateur</a>
 </ul>
