@@ -6,4 +6,8 @@ export class User {
 	public drinkPreference: string,
 	public hobbies?: string[]
     ) {}
+
+    isEqual (other : User): boolean {
+	return other == this;
+    }
 }

@@ -34,7 +34,7 @@ export class UserService {
     removeUser(user: User) {
 	console.log('Entering in removeUser for ',user);
 	const userIndexToRemove = this.users.findIndex(
-	    (a_user) => user.isEqual (a_user) 
+	    (a_user) => this.userSubject.isEqual (a_user) 
 	);
 	this.users.splice(userIndexToRemove, 1);
 	//this.saveUsers();
