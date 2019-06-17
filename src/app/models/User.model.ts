@@ -7,7 +7,7 @@ export class User {
 	public hobbies?: string[]
     ) {}
 
-//    isEqual (other : User): boolean {
-//	return other === this;
-//    }
+    isEqual (other : User): boolean {
+	return other === this;
+    }
 }
