@@ -31,11 +31,14 @@ export class UserService {
 	this.emitUsers();
     }
 
+    areUserEqual(user: User, other: User){
+	return other === user;
+    }
+    
     removeUser(user: User) {
 	console.log('Entering in removeUser for ',user);
 	const userIndexToRemove = this.users.findIndex(
-	    (a_user) => {return user === a_user;}
-//	    (a_user) => user.isEqual (a_user) 
+	    (a_user) => {return this.areUserEqual (user, a_user)} 
 	);
 	this.users.splice(userIndexToRemove, 1);
 	this.emitUsers();
